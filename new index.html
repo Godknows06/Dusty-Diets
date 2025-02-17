@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel Fit - Health, Fitness, and Lifestyle</title>
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        nav .logo h1 {
+            font-size: 2.2rem;
+            color: #ff6200;
+        }
+
+        nav .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        nav .nav-links li {
+            margin-left: 30px;
+        }
+
+        nav .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        nav .nav-links a:hover {
+            color: #ff6200;
+        }
+
+        /* Home Section */
+        .home {
+            background-color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .home h2 {
+            font-size: 3rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .home p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        .home .sample-article {
+            background-color: #ececec;
+            padding: 30px;
+            margin-top: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .home .sample-article:hover {
+            transform: scale(1.05);
+        }
+
+        .home .sample-article h3 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .home .btn {
+            display: inline-block;
+            background-color: #ff6200;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .home .btn:hover {
+            background-color: #e55100;
+        }
+
+        /* Blog Section */
+        .blog {
+            padding: 70px 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .blog h2 {
+            font-size: 3rem;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .blog .articles {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .blog article {
+            background-color: #ececec;
+            padding: 25px;
+            border-radius: 10px;
+            width: 30%;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .blog article:hover {
+            transform: scale(1.05);
+        }
+
+        .blog article img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .blog article h3 {
+            font-size: 1.6rem;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        .blog article p {
+            font-size: 1rem;
+            margin-top: 10px;
+            color: #666;
+        }
+
+        .blog article .affiliate-link a {
+            color: #ff6200;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .blog article .affiliate-link a:hover {
+            color: #e55100;
+        }
+
+        .blog .btn {
+            display: inline-block;
+            background-color: #ff6200;
+            color: white;
+            padding: 10px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .blog .btn:hover {
+            background-color: #e55100;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 70px 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+            background-color: #ececec;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact form input, .contact form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+
+        .contact form button {
+            background-color: #ff6200;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact form button:hover {
+            background-color: #e55100;
+        }
+
+        .contact .social-media {
+            margin-top: 30px;
+        }
+
+        .contact .social-media a {
+            color: #ff6200;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Fuel Fit</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" onclick="scrollToSection('home')">Home</a></li>
+                <li><a href="#blog" onclick="scrollToSection('blog')">Blog</a></li>
+                <li><a href="#contact" onclick="scrollToSection('contact')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="home">
+        <h2>Welcome to Fuel Fit</h2>
+        <p>Your go-to place for fitness, health, and personal development tips!</p>
+        <div class="sample-article">
+            <h3>Featured Article: The Best Diet for Weight Loss</h3>
+            <p>Struggling to lose weight? Discover the best diets and tips that can help you achieve your fitness goals effectively.</p>
+            <a href="#" class="btn">Read More</a>
+        </div>
+    </section>
+
+    <section id="blog" class="blog">
+        <h2>Our Latest Articles</h2>
+        <div class="articles">
+            <article>
+                <h3>Diet Tips for Weight Loss</h3>
+                <img src="https://via.placeholder.com/300x200" alt="Diet Image">
+                <p>Learn the most effective diet strategies to shed those extra pounds and keep the weight off for good!</p>
+                <a href="#" class="btn">Read More</a>
+                <p class="affiliate-link"><a href="https://affiliate-link.com" target="_blank">Check out this product!</a></p>
+            </article>
+            <article>
+                <h3>Time Management for Success</h3>
+                <img src="https://via.placeholder.com/300x200" alt="Time Management">
+                <p>Master the art of time management with these simple strategies to boost your productivity and work-life balance.</p>
+                <a href="#" class="btn">Read More</a>
+                <p class="affiliate-link"><a href="https://affiliate-link.com" target="_blank">Discover time-saving tools!</a></p>
+            </article>
+            <article>
+                <h3>Fitness Routine for Beginners</h3>
+                <img src="https://via.placeholder.com/300x200" alt="Fitness Routine">
+                <p>Start your fitness journey with our easy-to-follow workout routine for beginners that guarantees results.</p>
+                <a href="#" class="btn">Read More</a>
+                <p class="affiliate-link"><a href="https://affiliate-link.com" target="_blank">Get the equipment here!</a></p>
+            </article>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form action="#" method="POST" onsubmit="return submitForm()">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <div class="social-media">
+            <a href="mailto:mwandiringa3g@gmail.com">Email Us</a> | <a href="https://www.instagram.com/dust.y_diets/" target="_blank">Instagram</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Fuel Fit. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Scroll to section function
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Form submission function (simulate success)
+        function submitForm() {
+            alert('Your message has been sent successfully!');
+            return false; // Prevent form submission for demo purposes
+        }
+    </script>
+</body>
+</html>
